@@ -1,0 +1,10 @@
+
+name: 支付接口 api
+base_url: ${ENV(BASE_URL)}
+request:
+    url: $location
+    method: get
+
+validate:
+    - contains: [content, 支付成功]
+

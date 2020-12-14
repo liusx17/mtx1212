@@ -1,0 +1,10 @@
+
+config:
+    name: "发货 testsuite"
+
+testcases:
+
+-
+    name: 发货测试用例
+    testcase: testcases/deliver_testcase.yml
+

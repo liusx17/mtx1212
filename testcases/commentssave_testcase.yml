@@ -1,0 +1,45 @@
+
+config:
+    name: "评论 testcase"
+teststeps:
+-
+    name: 调用登录接口
+    api: api/login_api.yml
+#    extract:
+#        - token: content.token
+    validate:
+        - eq: [content.msg, 登录成功]
+
+-
+    name: 调用下订单接口
+    api: api/order_api.yml
+    extract:
+        - jump_url: content.data.jump_url
+        - order_id: content.data.order.id
+        - user_id:  content.data.order.user_id
+
+-
+    name: 调用重定向302接口
+    api: api/302_api.yml
+    extract:
+        - location: headers.Location
+
+-
+    name: 调用支付接口
+    api: api/pay_api.yml
+
+-
+    name: 调用管理员登录接口
+    api: api/admin_api.yml
+
+-
+    name: 调用发货接口
+    api: api/deliver_api.yml
+
+-
+    name: 调用收货接口
+    api: api/collect_api.yml
+
+-
+    name: 调用评论接口
+    api: api/commentssave_api.yml

@@ -1,0 +1,18 @@
+
+config:
+    name: "order testcase"
+teststeps:
+-
+    name: 调用登录接口
+    api: api/login_api.yml
+#    extract:
+#        - token: content.token
+    validate:
+        - eq: [content.msg, 登录成功]
+
+-
+    name: 调用下订单接口
+    api: api/order_api.yml
+#    extract:
+#        - token: content.token
+

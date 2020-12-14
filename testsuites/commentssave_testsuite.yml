@@ -1,0 +1,10 @@
+
+config:
+    name: "评论 testsuite"
+
+testcases:
+
+-
+    name: 评论测试用例
+    testcase: testcases/commentssave_testcase.yml
+

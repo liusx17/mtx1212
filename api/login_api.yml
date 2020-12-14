@@ -1,0 +1,17 @@
+
+name: 登录接口 api
+variables:
+    accounts: yaoyao
+    pwd: yaoyao
+base_url: ${ENV(BASE_URL)}
+request:
+    url: /mtx/index.php?s=/index/user/login.html
+    method: POST
+    headers:
+        X-Requested-With: XMLHttpRequest
+    data:
+        accounts: $accounts
+        pwd: $pwd
+validate:
+    - eq: [content.msg, 正常登录]
+

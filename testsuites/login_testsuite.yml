@@ -1,0 +1,15 @@
+
+config:
+    name: "login testsuite"
+
+testcases:
+-
+    name: 登录测试用例
+    testcase: testcases/login_testcase.yml
+#    variables:
+#        device_sn: $device_sn
+    #第二种：读取csv文件
+    parameters:
+        #在yml脚本中的哪个位置用到了这四个变量
+        title-accounts-pwd-expect: ${P(data/login.csv)}
+

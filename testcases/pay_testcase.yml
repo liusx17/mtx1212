@@ -1,0 +1,29 @@
+
+config:
+    name: "pay testcase"
+teststeps:
+-
+    name: 调用登录接口
+    api: api/login_api.yml
+#    extract:
+#        - token: content.token
+    validate:
+        - eq: [content.msg, 登录成功]
+
+-
+    name: 调用下订单接口
+    api: api/order_api.yml
+    extract:
+        - jump_url: content.data.jump_url
+
+-
+    name: 调用重定向302接口
+    api: api/302_api.yml
+    extract:
+        - location: headers.Location
+
+-
+    name: 调用支付接口
+    api: api/pay_api.yml
+
+
